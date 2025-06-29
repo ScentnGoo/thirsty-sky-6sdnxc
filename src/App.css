@@ -1,0 +1,1128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Header */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    padding: 15px 0;
+  }
+  
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .logo-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #ffd700, #ff6b35);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  }
+  
+  .scent-drop {
+    width: 12px;
+    height: 16px;
+    background: white;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transform: rotate(-45deg);
+  }
+  
+  .scent-sparkle {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    animation: sparkle 2s infinite;
+  }
+  
+  @keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(0.8); }
+  }
+  
+  .logo-text {
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffd700, #ff6b35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #ffd700;
+  }
+  
+  .cta-button-header {
+    background: linear-gradient(135deg, #ffd700, #ff6b35);
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  }
+  
+  .cta-button-header:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+  }
+  
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a1a, #2a1a4a);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    padding-top: 100px;
+  }
+  
+  .hero-text {
+    max-width: 800px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+  }
+  
+  .hero-text.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .hero-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: #ffffff;
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #ffd700, #ff6b35, #ff1493);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-subtitle {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+  }
+  
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .stat {
+    text-align: center;
+  }
+  
+  .stat-number {
+    display: block;
+    font-size: 48px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffd700, #ff6b35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .stat-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .cta-button-primary {
+    background: linear-gradient(135deg, #ffd700, #ff6b35);
+    color: #000;
+    border: none;
+    padding: 18px 36px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.3);
+  }
+  
+  .cta-button-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+  }
+  
+  .cta-button-secondary {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffd700;
+    padding: 16px 34px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button-secondary:hover {
+    background: #ffd700;
+    color: #000;
+    transform: translateY(-3px);
+  }
+  
+  /* Section Styles */
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .section-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ffd700, #ff6b35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .section-subtitle {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Opportunity Section */
+  .opportunity-section {
+    background: linear-gradient(135deg, #0a0a0a, #1a0a2e);
+    padding: 80px 0;
+    position: relative;
+  }
+  
+  .competitive-advantage {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    padding: 60px 40px;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+  }
+  
+  .competitive-advantage h3 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: #ffd700;
+  }
+  
+  .advantage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+  }
+  
+  .advantage-item {
+    text-align: center;
+  }
+  
+  .advantage-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ffd700, #ff6b35);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 800;
+    color: #000;
+    margin: 0 auto 20px;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+  }
+  
+  .advantage-item h4 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #ffffff;
+  }
+  
+  .advantage-item p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+  }
+  
+  /* Product Section */
+  .product-section {
+    background: linear-gradient(135deg, #1a1a1a, #2a1a4a);
+    padding: 80px 0;
+  }
+  
+  .product-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-align: center;
+    background: linear-gradient(135deg, #ffd700, #ff6b35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .product-description {
+    font-size: 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .roi-calculator {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(147, 112, 219, 0.1));
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .roi-calculator h3 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #ffd700;
+  }
+  
+  .roi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .roi-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+  }
+  
+  .roi-item.highlight {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 107, 53, 0.2));
+    border-color: rgba(255, 215, 0, 0.4);
+    transform: scale(1.05);
+  }
+  
+  .roi-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .roi-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffd700;
+  }
+  
+  .roi-calc-button {
+    background: linear-gradient(135deg, #ffd700, #ff6b35);
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+  }
+  
+  .roi-calc-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4);
+  }
+  
+  /* Investment Section */
+  .investment-section {
+    background: linear-gradient(135deg, #0a0a0a, #1a0a2e);
+    padding: 80px 0;
+    text-align: center;
+  }
+  
+  .investment-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #ffd700, #ff6b35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .investment-package {
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 40px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(255, 215, 0, 0.1);
+  }
+  
+  .package-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  }
+  
+  .package-header h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffd700;
+    margin-bottom: 20px;
+  }
+  
+  .price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  .currency {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffd700;
+  }
+  
+  .amount {
+    font-size: 64px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ffd700, #ff6b35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .package-includes {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+  
+  .include-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    justify-content: center;
+  }
+  
+  .invest-button {
+    background: linear-gradient(135deg, #ffd700, #ff6b35);
+    color: #000;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3); }
+    50% { box-shadow: 0 15px 50px rgba(255, 215, 0, 0.5); }
+    100% { box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3); }
+  }
+  
+  .invest-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 60px rgba(255, 215, 0, 0.4);
+  }
+  
+  /* Modal Styles */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+  }
+  
+  .modal-content {
+    background: linear-gradient(135deg, #1a1a1a, #2a1a4a);
+    border-radius: 24px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(255, 215, 0, 0.2);
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px 20px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  }
+  
+  .modal-header h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffd700;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 32px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .close-btn:hover {
+    color: #ffd700;
+  }
+  
+  .modal-body {
+    padding: 30px;
+  }
+  
+  /* Calculator Styles */
+  .calculator-inputs {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .input-group label {
+    font-weight: 600;
+    color: #ffd700;
+    font-size: 14px;
+  }
+  
+  .calculator-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: #ffffff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .calculator-input:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+  }
+  
+  .calculator-results {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+  }
+  
+  .calculator-results h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #ffd700;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+  }
+  
+  .result-item.highlight {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 107, 53, 0.2));
+    border-color: rgba(255, 215, 0, 0.4);
+  }
+  
+  .result-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+  }
+  
+  .result-value {
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffd700;
+  }
+  
+  .invest-now-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #ffd700, #ff6b35);
+    color: #000;
+    border: none;
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.3);
+  }
+  
+  .invest-now-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(255, 215, 0, 0.4);
+  }
+  
+  /* Cart Styles */
+  .cart-item {
+    padding: 30px 0;
+    text-align: center;
+  }
+  
+  .cart-item h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffd700;
+    margin-bottom: 10px;
+  }
+  
+  .cart-item p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
+  
+  .payment-form {
+    display: grid;
+    gap: 15px;
+  }
+  
+  .form-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: #ffffff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+  }
+  
+  .form-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .checkout-btn {
+    background: linear-gradient(135deg, #ffd700, #ff6b35);
+    color: #000;
+    border: none;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+    margin-top: 20px;
+  }
+  
+  .checkout-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 50px rgba(255, 215, 0, 0.4);
+  }
+  
+  /* Footer */
+  .footer {
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    padding: 40px 0;
+  }
+  
+  .footer-content {
+    text-align: center;
+  }
+  
+  .footer-content p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav {
+      display: none;
+    }
+    
+    .hero-stats {
+      justify-content: center;
+    }
+    
+    .hero-buttons {
+      justify-content: center;
+    }
+    
+    .advantage-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .roi-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .price {
+      flex-direction: column;
+      gap: 0;
+    }
+    
+    .amount {
+      font-size: 48px;
+    }
+  }
+  📁 FILE 2: Replace src/App.js (if needed)
+  Make sure your App.js has this complete code:
+  
+  import React, { useState, useEffect } from 'react';
+  import './App.css';
+  
+  function App() {
+    const [isVisible, setIsVisible] = useState(false);
+    const [showROICalculator, setShowROICalculator] = useState(false);
+    const [showCart, setShowCart] = useState(false);
+    const [roiInputs, setROIInputs] = useState({
+      location: 'gym',
+      footTraffic: 200,
+      pricePerSpray: 2,
+      operatingDays: 30
+    });
+  
+    useEffect(() => {
+      setIsVisible(true);
+    }, []);
+  
+    const locationMultipliers = {
+      gym: { name: 'Fitness Center', multiplier: 1.2, avgUses: 4 },
+      pub: { name: 'Pub/Bar', multiplier: 1.5, avgUses: 6 },
+      club: { name: 'Nightclub', multiplier: 2.0, avgUses: 8 },
+      restaurant: { name: 'Restaurant', multiplier: 1.3, avgUses: 5 },
+      hotel: { name: 'Hotel', multiplier: 1.4, avgUses: 5 }
+    };
+  
+    const calculateROI = () => {
+      const location = locationMultipliers[roiInputs.location];
+      const dailyUsers = Math.floor(roiInputs.footTraffic * 0.15);
+      const dailyUses = dailyUsers * location.avgUses;
+      const dailyRevenue = dailyUses * roiInputs.pricePerSpray * location.multiplier;
+      const monthlyRevenue = dailyRevenue * roiInputs.operatingDays;
+      const monthlyProfit = monthlyRevenue * 0.75;
+      const yearlyProfit = monthlyProfit * 12;
+      const breakEvenMonths = 4999 / monthlyProfit;
+      const roi = ((yearlyProfit - 4999) / 4999) * 100;
+  
+      return {
+        dailyUsers,
+        dailyUses,
+        dailyRevenue: Math.round(dailyRevenue),
+        monthlyRevenue: Math.round(monthlyRevenue),
+        monthlyProfit: Math.round(monthlyProfit),
+        yearlyProfit: Math.round(yearlyProfit),
+        breakEvenMonths: Math.round(breakEvenMonths * 10) / 10,
+        roi: Math.round(roi)
+      };
+    };
+  
+    const handleROIInputChange = (field, value) => {
+      setROIInputs(prev => ({
+        ...prev,
+        [field]: value
+      }));
+    };
+  
+    const roiResults = calculateROI();
+  
+    return (
+      <div className="App">
+        {/* Header */}
+        <header className="header">
+          <div className="container">
+            <div className="logo">
+              <div className="logo-icon">
+                <div className="scent-drop"></div>
+                <div className="scent-sparkle"></div>
+              </div>
+              <span className="logo-text">ScentNGoo</span>
+            </div>
+            <nav className="nav">
+              <a href="#opportunity" className="nav-link">Opportunity</a>
+              <a href="#product" className="nav-link">Product</a>
+              <a href="#invest" className="nav-link">Invest Now</a>
+            </nav>
+            <button className="cta-button-header" onClick={() => setShowCart(true)}>Get Started</button>
+          </div>
+        </header>
+  
+        {/* Hero Section */}
+        <section className="hero">
+          <div className="hero-content">
+            <div className={`hero-text ${isVisible ? 'animate-in' : ''}`}>
+              <h1 className="hero-title">
+                Transform Your Business Into A 
+                <span className="gradient-text"> Luxury Fragrance Empire</span>
+              </h1>
+              <p className="hero-subtitle">
+                Generate £2,000-£5,000+ monthly passive income with our premium 10-scent perfume vending machines. 
+                Perfect for pubs, clubs, gyms & indoor venues.
+              </p>
+              <div className="hero-stats">
+                <div className="stat">
+                  <span className="stat-number">625</span>
+                  <span className="stat-label">Sprays per 100ml</span>
+                </div>
+                <div className="stat">
+                  <span className="stat-number">10</span>
+                  <span className="stat-label">Premium Scents</span>
+                </div>
+                <div className="stat">
+                  <span className="stat-number">3-6</span>
+                  <span className="stat-label">Month ROI</span>
+                </div>
+              </div>
+              <div className="hero-buttons">
+                <button className="cta-button-primary" onClick={() => setShowCart(true)}>Start Your Empire £4,999</button>
+                <button className="cta-button-secondary" onClick={() => setShowROICalculator(true)}>View ROI Calculator</button>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        {/* Opportunity Section */}
+        <section id="opportunity" className="opportunity-section">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">The £Multi-Million Fragrance Opportunity</h2>
+              <p className="section-subtitle">Perfect for indoor venues: pubs, clubs, gyms & premium establishments</p>
+            </div>
+            
+            <div className="competitive-advantage">
+              <h3>Why ScentNGoo Dominates The Competition</h3>
+              <div className="advantage-grid">
+                <div className="advantage-item">
+                  <div className="advantage-icon">10</div>
+                  <h4>10 Premium Scents</h4>
+                  <p>Double the variety of competitors (5 scents). More choices = More sales</p>
+                </div>
+                <div className="advantage-item">
+                  <div className="advantage-icon">📱</div>
+                  <h4>Smart App Monitoring</h4>
+                  <p>Real-time inventory tracking. True passive income.</p>
+                </div>
+                <div className="advantage-item">
+                  <div className="advantage-icon">625</div>
+                  <h4>625 Sprays Per Bottle</h4>
+                  <p>Maximum efficiency = Maximum profit</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        {/* Product Section */}
+        <section id="product" className="product-section">
+          <div className="container">
+            <h2 className="product-title">The ScentNGoo Luxury Vending System</h2>
+            <p className="product-description">
+              State-of-the-art technology meets premium design. 
+            </p>
+            
+            <div className="roi-calculator">
+              <h3>Your ROI Breakdown</h3>
+              <div className="roi-grid">
+                <div className="roi-item">
+                  <span className="roi-label">Initial Investment</span>
+                  <span className="roi-value">£4,999</span>
+                </div>
+                <div className="roi-item">
+                  <span className="roi-label">Monthly Revenue</span>
+                  <span className="roi-value">£2,800+</span>
+                </div>
+                <div className="roi-item highlight">
+                  <span className="roi-label">Annual Profit</span>
+                  <span className="roi-value">£28,600+</span>
+                </div>
+              </div>
+              <button className="roi-calc-button" onClick={() => setShowROICalculator(true)}>
+                Calculate Your Custom ROI
+              </button>
+            </div>
+          </div>
+        </section>
+  
+        {/* Investment Section */}
+        <section id="invest" className="investment-section">
+          <div className="container">
+            <h2 className="investment-title">Start Your Fragrance Empire Today</h2>
+            <div className="investment-package">
+              <div className="package-header">
+                <h3>Complete Business Package</h3>
+                <div className="price">
+                  <span className="currency">£</span>
+                  <span className="amount">4,999</span>
+                </div>
+              </div>
+              <div className="package-includes">
+                <div className="include-item">✅ Premium ScentNGoo Vending Machine</div>
+                <div className="include-item">✅ 10 Luxury Fragrance Bottles</div>
+                <div className="include-item">✅ Professional Installation</div>
+                <div className="include-item">✅ 1-Year Warranty</div>
+                <div className="include-item">✅ 24/7 Support</div>
+              </div>
+              <button className="invest-button" onClick={() => setShowCart(true)}>
+                Secure Your Machine Now - £4,999
+              </button>
+            </div>
+          </div>
+        </section>
+  
+        {/* ROI Calculator Modal */}
+        {showROICalculator && (
+          <div className="modal-overlay" onClick={() => setShowROICalculator(false)}>
+            <div className="modal-content" onClick={e => e.stopPropagation()}>
+              <div className="modal-header">
+                <h2>ROI Calculator</h2>
+                <button className="close-btn" onClick={() => setShowROICalculator(false)}>×</button>
+              </div>
+              <div className="modal-body">
+                <div className="calculator-inputs">
+                  <div className="input-group">
+                    <label>Location Type:</label>
+                    <select 
+                      value={roiInputs.location} 
+                      onChange={e => handleROIInputChange('location', e.target.value)}
+                      className="calculator-input"
+                    >
+                      <option value="gym">Fitness Center</option>
+                      <option value="pub">Pub/Bar</option>
+                      <option value="club">Nightclub</option>
+                      <option value="restaurant">Restaurant</option>
+                      <option value="hotel">Hotel</option>
+                    </select>
+                  </div>
+                  <div className="input-group">
+                    <label>Daily Foot Traffic:</label>
+                    <input 
+                      type="number" 
+                      value={roiInputs.footTraffic}
+                      onChange={e => handleROIInputChange('footTraffic', parseInt(e.target.value))}
+                      className="calculator-input"
+                    />
+                  </div>
+                  <div className="input-group">
+                    <label>Price Per Spray (£):</label>
+                    <input 
+                      type="number" 
+                      value={roiInputs.pricePerSpray}
+                      onChange={e => handleROIInputChange('pricePerSpray', parseFloat(e.target.value))}
+                      className="calculator-input"
+                      step="0.5"
+                    />
+                  </div>
+                </div>
+                
+                <div className="calculator-results">
+                  <h3>Your Projected Results</h3>
+                  <div className="results-grid">
+                    <div className="result-item">
+                      <span className="result-label">Monthly Profit:</span>
+                      <span className="result-value">£{roiResults.monthlyProfit}</span>
+                    </div>
+                    <div className="result-item highlight">
+                      <span className="result-label">Annual Profit:</span>
+                      <span className="result-value">£{roiResults.yearlyProfit}</span>
+                    </div>
+                    <div className="result-item">
+                      <span className="result-label">Break-even:</span>
+                      <span className="result-value">{roiResults.breakEvenMonths} months</span>
+                    </div>
+                  </div>
+                  <button className="invest-now-btn" onClick={() => {setShowROICalculator(false); setShowCart(true);}}>
+                    Invest Now - £4,999
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+  
+        {/* Cart Modal */}
+        {showCart && (
+          <div className="modal-overlay" onClick={() => setShowCart(false)}>
+            <div className="modal-content cart-modal" onClick={e => e.stopPropagation()}>
+              <div className="modal-header">
+                <h2>Complete Your Purchase</h2>
+                <button className="close-btn" onClick={() => setShowCart(false)}>×</button>
+              </div>
+              <div className="modal-body">
+                <div className="cart-item">
+                  <h3>ScentNGoo Premium Vending Machine</h3>
+                  <p>Complete business package - £4,999</p>
+                  <div className="payment-form">
+                    <input type="text" placeholder="Full Name" className="form-input" />
+                    <input type="email" placeholder="Email Address" className="form-input" />
+                    <input type="tel" placeholder="Phone Number" className="form-input" />
+                    <button className="checkout-btn">Proceed to Payment - £4,999</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+  
+        {/* Footer */}
+        <footer className="footer">
+          <div className="container">
+            <div className="footer-content">
+              <div className="logo">
+                <span className="logo-text">ScentNGoo</span>
+              </div>
+              <p>📧 scentngoo@gmail.com | 📞 +44 (0) 20 7946 0958</p>
+              <p>&copy; 2025 ScentNGoo. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    );
+  }
+  
+  export default App;
